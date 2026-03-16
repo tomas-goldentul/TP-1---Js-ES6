@@ -41,7 +41,8 @@ function ValidarPassword() {
 }
 
 function SumarArray(){
-    let array = document.getElementById("array").value;
+    let numeros = document.getElementById("array").value;
+   let array =  numeros.split(',')
     let sum = 0;
      array.forEach(num => sum += num);
     console.log("La suma total es: " + sum);
@@ -52,4 +53,14 @@ function MayorNumero(){
     numeros = numeros.split(",");
     numeros = numeros.map(num => Number(num));
     console.log(Math.max(numeros));
+     array.forEach(num => sum += parseFloat(num) || 0);
+       let Respuesta = document.getElementById("SumarArray");
+    Respuesta.innerHTML = sum;
+}
+function FiltrarPares(){
+    let numeros = document.getElementById("arrayPares").value;
+   let array =  numeros.split(',')
+    let pares = array.filter(num => parseInt(num) % 2 === 0);
+    let Respuesta = document.getElementById("FiltrarPares");
+    Respuesta.innerHTML = pares;
 }
