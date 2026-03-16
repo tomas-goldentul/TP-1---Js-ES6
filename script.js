@@ -45,5 +45,13 @@ function SumarArray(){
    let array =  numeros.split(',')
     let sum = 0;
      array.forEach(num => sum += parseFloat(num) || 0);
-    console.log("La suma total es: " + sum);
+       let Respuesta = document.getElementById("SumarArray");
+    Respuesta.innerHTML = sum;
+}
+function FiltrarPares(){
+    let numeros = document.getElementById("arrayPares").value;
+   let array =  numeros.split(',')
+    let pares = array.filter(num => parseInt(num) % 2 === 0);
+    let Respuesta = document.getElementById("FiltrarPares");
+    Respuesta.innerHTML = pares;
 }
