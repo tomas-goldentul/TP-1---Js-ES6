@@ -44,6 +44,15 @@ function SumarArray(){
     let numeros = document.getElementById("array").value;
    let array =  numeros.split(',')
     let sum = 0;
+     array.forEach(num => sum += num);
+    console.log("La suma total es: " + sum);
+}
+
+function MayorNumero(){
+    let numeros = document.getElementById("numeros").value;
+    numeros = numeros.split(",");
+    numeros = numeros.map(num => Number(num));
+    console.log(Math.max(numeros));
      array.forEach(num => sum += parseFloat(num) || 0);
        let Respuesta = document.getElementById("SumarArray");
     Respuesta.innerHTML = sum;
