@@ -46,3 +46,10 @@ function SumarArray(){
      array.forEach(num => sum += num);
     console.log("La suma total es: " + sum);
 }
+
+function MayorNumero(){
+    let numeros = document.getElementById("numeros").value;
+    numeros = numeros.split(",");
+    numeros = numeros.map(num => Number(num));
+    console.log(Math.max(numeros));
+}
