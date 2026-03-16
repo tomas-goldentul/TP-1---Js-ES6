@@ -41,8 +41,9 @@ function ValidarPassword() {
 }
 
 function SumarArray(){
-    let array = document.getElementById("array").value;
+    let numeros = document.getElementById("array").value;
+   let array =  numeros.split(',')
     let sum = 0;
-     array.forEach(num => sum += num);
+     array.forEach(num => sum += parseFloat(num) || 0);
     console.log("La suma total es: " + sum);
 }
