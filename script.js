@@ -208,3 +208,40 @@ function promedio() {
     let Respuesta = document.getElementById("DisplayPromedio");
     Respuesta.innerHTML = "El promedio es: " + promedio;
 }
+function Api() {
+    const usuarios = [
+
+{id:1, nombre:"Ana", edad:20},
+
+{id:2, nombre:"Juan", edad:15},
+
+{id:3, nombre:"Pedro", edad:30}
+
+]
+
+
+
+}
+
+function ObtenerUsuarios(usuarios) {
+    const usuarios = usuarios.map(usua => usua.nombre);
+return usuarios;
+}
+
+function ObtenerUsuarioPorId(id) {
+    Api();
+    findUsuario = usuarios.find(usua => usua.id === id);
+    return findUsuario ? findUsuario.nombre : "Usuario no encontrado";
+}
+
+function obtenerMayores(usuarios) {
+    UsuariosMayores = usuarios.filter(usua => usua.edad >= 18);
+    return UsuariosMayores;
+}
+
+function crearUsuario(nombre, edad){
+    Api();
+    const nuevoUsuario = { id: usuarios.length + 1, nombre: nombre, edad: edad };
+    usuarios.push(nuevoUsuario);
+    return nuevoUsuario;
+}
