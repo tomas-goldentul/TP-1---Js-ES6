@@ -148,3 +148,63 @@ function reduceEdad() {
     let Respuesta = document.getElementById("reduceEdad");
     Respuesta.innerHTML = resultadoEsperado;
 }
+
+function destructing(){
+    const producto = {
+        nombre: "Notebook",
+        precio: 1000
+    }
+    const { nombre, precio } = producto;
+    console.log("Nombre:", nombre, "Precio:", precio);
+    document.getElementById("MostrarNombreYPrecio").innerHTML = "Nombre: " + nombre + ", Precio: " + precio;
+    return { nombre, precio };
+}
+
+function spreadOperation(){
+    const producto = {
+
+nombre:"Notebook",
+
+precio:1000
+
+}
+    const nuevoProducto = { ...producto, stock: "5" };
+      let Respuesta = document.getElementById("reduceEdad");
+    Respuesta.innerHTML = nuevoProducto.nombre + ", " + nuevoProducto.precio + ", " + nuevoProducto.stock;
+} 
+
+function BuscarProducto() {
+    const productos = [
+        { nombre: "Mouse", precio: 10 },
+        { nombre: "Teclado", precio: 25 },
+        { nombre: "Monitor", precio: 200 }
+    ]
+    let nombreProducto = document.getElementById("nombreProducto").value;
+    let productoEncontrado = productos.find(producto => producto.nombre.toLowerCase() === nombreProducto.toLowerCase());
+    let Respuesta = document.getElementById("BuscarProducto");
+    Respuesta.innerHTML = productoEncontrado ? "Producto encontrado: " + productoEncontrado.nombre + ", Precio: " + productoEncontrado.precio : "Producto no encontrado";
+}
+
+function ProductosCaros() {
+      const productos = [
+        { nombre: "Mouse", precio: 10 },
+        { nombre: "Teclado", precio: 25 },
+        { nombre: "Monitor", precio: 200 }
+    ]
+    let productosCaros = productos.filter(producto => producto.precio > 50);
+    let Respuesta = document.getElementById("ProductosCaros");
+    Respuesta.innerHTML =  productosCaros.map(producto => producto.nombre).join(", ") ;
+}
+
+function promedio() {
+        let numeros = document.getElementById("promedio").value;
+
+    if (numeros === null) {
+        let numeros = document.getElementById("promedio").value;
+    }
+    let listaNumeros = (numeros.split(","));
+    let sum = listaNumeros.reduce((acc, num) => acc + parseFloat(num), 0);
+    let promedio = sum / listaNumeros.length;
+    let Respuesta = document.getElementById("DisplayPromedio");
+    Respuesta.innerHTML = "El promedio es: " + promedio;
+}
